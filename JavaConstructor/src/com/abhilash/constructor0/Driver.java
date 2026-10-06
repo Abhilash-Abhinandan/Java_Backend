@@ -18,7 +18,7 @@ public class Driver {
 			price = sc.nextInt();
 			sc.nextLine();
 		} else {
-			System.out.println("Please enter numbers only!");
+			System.err.println("Please enter numbers only!");
 			sc.nextLine();
 		}
 		
