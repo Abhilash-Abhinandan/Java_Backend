@@ -22,7 +22,6 @@ public class Driver {
 			sc.nextLine();
 		}
 		
-		
 		System.out.println("Name => " + name);
 		System.out.println("Price => " + price);
 		sc.close(); // Closing this is very important
