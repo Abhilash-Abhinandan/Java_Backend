@@ -41,23 +41,23 @@ public class EmployeeSalaryAnalyzer {
 		return totalSalary / this.salaries.length;
 	}
 	
-	public double findSalaryAbove40000() {
-		double salaryAbove40000 = 0;
+	public int countSalaryAbove40000() {
+		int salaryAbove40000 = 0;
 		
 		for(int count = 0; count < this.salaries.length; count++) {
 			if(this.salaries[count] > 40000) salaryAbove40000 += 1;
 		}
-		
+
 		return salaryAbove40000;
 	}
 	
-	public double findSalaryBellow30000() {
-		double salaryBellow30000 = 0;
+	public int countSalaryBellow30000() {
+		int salaryBelow30000 = 0;
 		
 		for(int count = 0; count < this.salaries.length; count++) {
-			if(this.salaries[count] < 30000) salaryBellow30000 += 1;
+			if(this.salaries[count] < 30000) salaryBelow30000 += 1;
 		}
 		
-		return salaryBellow30000;
+		return salaryBelow30000;
 	}
 }
