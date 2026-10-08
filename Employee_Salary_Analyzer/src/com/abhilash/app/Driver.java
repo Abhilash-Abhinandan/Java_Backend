@@ -1,6 +1,6 @@
 package com.abhilash.app;
 
-import com.abhilash.serivce.EmployeeSalaryAnalyzer;
+import com.abhilash.service.EmployeeSalaryAnalyzer;
 
 public class Driver {
 	public static void main(String args[]) {

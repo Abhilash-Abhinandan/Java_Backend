@@ -1,4 +1,4 @@
-package com.abhilash.serivce;
+package com.abhilash.service;
 
 public class EmployeeSalaryAnalyzer {
 	private double[] salaries;
