@@ -4,6 +4,9 @@ public class EmployeeSalaryAnalyzer {
 	private double[] salaries;
 	
 	public EmployeeSalaryAnalyzer(double[] _salaries) {
+		if(_salaries == null) throw new IllegalArgumentException("Salary array can not be null");
+		if(_salaries.length == 0) throw new IllegalArgumentException("Salay array can not be empty");
+		
 		this.salaries = new double[_salaries.length];
 		
 		for(int count = 0; count < this.salaries.length; count++) {
