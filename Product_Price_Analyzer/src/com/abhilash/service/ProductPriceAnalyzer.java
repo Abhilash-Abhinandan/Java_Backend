@@ -1,7 +1,7 @@
 package com.abhilash.service;
 
 public class ProductPriceAnalyzer {
-	private double productPrices[];
+	private double[] productPrices;
 	
 	public ProductPriceAnalyzer(double[] _productPrice) {
 		if(_productPrice == null)throw new IllegalArgumentException("Price array can not be null");
