@@ -13,11 +13,22 @@ public class BankOperation {
 		return newBalance;
 	}
 			
-	public void doWithdraw(double withdrawAmount) {
+	public double doWithdraw(double withdrawAmount) {
 		if(withdrawAmount <= 0) throw new IllegalArgumentException("Withdraw amount must me greater than 0");
-		if()
+		if(details == null) throw new IllegalArgumentException("Account details not initialized!");
+		
 		double currentBalance = details.getBalance();
-		details.setBalance(currentBalance - withdrawAmount);
+		if(withdrawAmount < currentBalance) throw new IllegalArgumentException("Insufficent balance!");
+		
+		double remainingAmount = currentBalance - withdrawAmount;
+		details.setBalance(remainingAmount);
+		return remainingAmount;
+	}
+	
+	public double checkBalance() {
+		if(details == null) throw new IllegalArgumentException("Account details not intialized!");
+		
+		return details.getBalance();
 	}
 }
 // I need to fix this there is some issue here!
