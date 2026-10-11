@@ -14,6 +14,8 @@ public class BankOperation {
 	}
 			
 	public void doWithdraw(double withdrawAmount) {
+		if(withdrawAmount <= 0) throw new IllegalArgumentException("Withdraw amount must me greater than 0");
+		if()
 		double currentBalance = details.getBalance();
 		details.setBalance(currentBalance - withdrawAmount);
 	}
