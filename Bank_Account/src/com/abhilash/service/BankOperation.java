@@ -5,9 +5,12 @@ import com.abhilash.model.BankAccountDetails;
 public class BankOperation {
 	BankAccountDetails details = new BankAccountDetails(343434343, "Abhilash", 15000000, "SBI");
 	
-	public void doDeposit(double depositAmount) {
-		if(depositAmount <= 0) return;
-		details.setBalance(depositAmount);
+	public double doDeposit(double depositAmount) {
+		if(depositAmount <= 0) throw new IllegalArgumentException("Deposite amount must be +ve");
+		if(details  == null) throw new IllegalArgumentException("Account details not initialized");
+		
+		double newBalance = details.getBalance() + depositAmount;
+		return newBalance;
 	}
 			
 	public void doWithdraw(double withdrawAmount) {
