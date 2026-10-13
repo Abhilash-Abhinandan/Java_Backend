@@ -2,6 +2,8 @@ package com.abhilash.model;
 
 public class ProductInfo {
 	private static int nextId = 1001;
+	
+	// We need to declare all the variable as array
 
 	private String productId;
 	private String productName;
