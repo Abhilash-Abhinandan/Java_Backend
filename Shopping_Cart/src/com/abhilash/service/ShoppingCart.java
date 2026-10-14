@@ -3,11 +3,11 @@ package com.abhilash.service;
 import com.abhilash.model.ProductInfo;
 
 public class ShoppingCart {
-	private static double DISCOUNT_TIER_1_MIN = 1000; 
-	private static double DISCOUNT_TIER_2_MIN = 5000; 
-	private static double DISCOUNT_RATE_1     = 0.05;
-	private static double DISCOUNT_RATE_2     = 0.10;
-	private static double MAX_DISCOUNT        = 1000; 
+	private static final double DISCOUNT_TIER_1_MIN = 1000; 
+	private static final double DISCOUNT_TIER_2_MIN = 5000; 
+	private static final double DISCOUNT_RATE_1     = 0.05;
+	private static final double DISCOUNT_RATE_2     = 0.10;
+	private static final double MAX_DISCOUNT        = 1000; 
 
 	private ProductInfo[] products;
 	
