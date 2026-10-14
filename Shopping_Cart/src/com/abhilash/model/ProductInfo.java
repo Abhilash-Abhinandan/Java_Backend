@@ -16,7 +16,7 @@ public class ProductInfo {
 			throw new IllegalArgumentException("Product name required!");
 		}
 		
-		if(_price < 0 || Double.isFinite(_price)) {
+		if(_price < 0 || !Double.isFinite(_price)) {
 			throw new IllegalArgumentException("Product price can not be -ve");
 		}
 		
