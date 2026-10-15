@@ -18,7 +18,7 @@ public class ElectricityBoard {
     private static final double FIXED_COMMERCIAL  = 150;
     
     // Tax
-    private static final double TAX_RATE = 0.5; 
+    private static final double TAX_RATE = 0.05; 
 
     private Consumer[] consumer;
     
@@ -44,45 +44,36 @@ public class ElectricityBoard {
     	 }
     }
     
-   public double calculateSlabCharge(Consumer consumer) {
-	   double total = 0;
-	   double consumedUnits = consumer.getConsumedUnits();
-	   
-	   if(!Double.isFinite(consumedUnits) || consumedUnits < 0) {
-		   throw new IllegalArgumentException("Units should be a positive number!");
-	   }
-	   
-	   double remeaing = 0;
-	   if(consumedUnits > SLAB_1_MAX) {
-		  remeaing = consumedUnits - SLAB_1_MAX;
-		  total += SLAB_1_MAX * SLAB_1_RATE;
-	   } else {
-		   return total += consumedUnits * SLAB_1_RATE;
-	   }
-	   
-	   if(remeaing > SLAB_2_MAX) {
-		   remeaing -= SLAB_2_MAX;
-		   total += SLAB_2_MAX * SLAB_2_RATE;
-	   } else {
-		   return total += remeaing * SLAB_2_RATE;
-	   }
-	   
-	  if(remeaing > SLAB_3_MAX) {
-		  remeaing -= SLAB_3_MAX;
-		  total += SLAB_3_MAX * SLAB_3_RATE;
-	  } else {
-		  return total += remeaing * SLAB_3_RATE;
-	  }
-	  
-	  if(remeaing > 0) {
-		  total += remeaing * SLAB_4_RATE;
-		  remeaing = 0;
-		  return total;
-	  }
-	  
-	  return total;
-   }
-   
+    public double calculateSlabCharge(Consumer consumer) {
+        if (consumer == null) {
+            throw new IllegalArgumentException("Consumer cannot be null");
+        }
+        int units = consumer.getConsumedUnits();
+        if (units < 0) {
+            throw new IllegalArgumentException("Units cannot be negative");
+        }
+
+        double total = 0;
+        int remaining = units;
+
+        int slab1 = Math.min(remaining, SLAB_1_MAX);
+        total += slab1 * SLAB_1_RATE;
+        remaining -= slab1;
+
+        int slab2 = Math.min(remaining, SLAB_2_MAX);
+        total += slab2 * SLAB_2_RATE;
+        remaining -= slab2;
+
+        int slab3 = Math.min(remaining, SLAB_3_MAX);
+        total += slab3 * SLAB_3_RATE;
+        remaining -= slab3;
+
+        // Anything left is slab 4
+        total += remaining * SLAB_4_RATE;
+
+        return total;
+    }
+    
    public double calculateFixedCharge(Consumer consumer) {
 	   String connectionType = consumer.getConnectionType();
 	   double fixedRate = 0;
