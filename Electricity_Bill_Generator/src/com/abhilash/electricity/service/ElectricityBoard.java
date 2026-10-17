@@ -13,11 +13,11 @@ public class ElectricityBoard {
     private static final double SLAB_3_RATE = 7.0;
     private static final double SLAB_4_RATE = 10.0;
     
-    // Fixed charges
+    // Constants — Fixed charges
     private static final double FIXED_RESIDENTIAL = 50;
     private static final double FIXED_COMMERCIAL  = 150;
     
-    // Tax
+    // Constant — Tax
     private static final double TAX_RATE = 0.05; 
 
     private Consumer[] consumer;
