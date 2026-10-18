@@ -16,8 +16,5 @@ public class PracticeStatic {
 		this.userMobile = userMobile;
 		System.out.println("I am inside the constructor");
 	}
-	public static void main(String args[]) {
-		System.out.println("I am inside the main()");
-		new PracticeStatic("u1", "Abhilash", "9999999999");
-	}
+	
 }
