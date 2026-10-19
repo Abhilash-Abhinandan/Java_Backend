@@ -7,6 +7,7 @@ public class Driver {
 		for(int count = 0; count < 100; count++) {
 			User user = new User("Guest", "Free");
 		}
+		
 		System.out.println(User.liveUserCount);
 	}
 }
