@@ -8,12 +8,15 @@ public class Payment {
 		this.balance = balance;
 	}
 	
+	// Setters
 	public void doDebit(int amount) {
 		 balance -= amount;
 	}
 	
 	public void doCredit(int amount) {
-		balance += amount;
+		if(amount > 0) {
+			balance += amount;
+		}
 	}
 	
 	// Getters
