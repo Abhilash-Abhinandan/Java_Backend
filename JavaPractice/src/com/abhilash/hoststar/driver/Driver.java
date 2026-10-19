@@ -4,8 +4,9 @@ import com.abhilash.hoststar.user.User;
 
 public class Driver {
 	public static void main(String args[]) {
-		User user = new User("Guest", "Free");
-		
+		for(int count = 0; count < 100; count++) {
+			User user = new User("Guest", "Free");
+		}
 		System.out.println(User.liveUserCount);
 	}
 }
