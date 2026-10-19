@@ -6,9 +6,9 @@ public class Driver {
 		Payment payment = new Payment(1000);
 		
 		payment.doDebit(500);
-		System.out.println(payment.balance);
+		System.out.println(payment.getBalance());
 		
 		payment.doCredit(4000);
-		System.out.println(payment.balance);
+		System.out.println(payment.getBalance());
 	}
 }

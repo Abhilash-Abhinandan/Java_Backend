@@ -1,7 +1,7 @@
 package com.abhilash.oops.encapsulation;
 
 public class Payment {
-	public double balance;
+	private double balance;
 	
 	public Payment(double balance) {
 		super();
@@ -14,5 +14,10 @@ public class Payment {
 	
 	public void doCredit(int amount) {
 		balance += amount;
+	}
+	
+	// Getters
+	public double getBalance() {
+		return this.balance;
 	}
 }
