@@ -7,5 +7,8 @@ public class Driver {
 		
 		payment.doDebit(500);
 		System.out.println(payment.balance);
+		
+		payment.doCredit(4000);
+		System.out.println(payment.balance);
 	}
 }
