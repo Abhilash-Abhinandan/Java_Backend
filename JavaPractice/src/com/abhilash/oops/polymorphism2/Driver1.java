@@ -19,12 +19,19 @@ class Dog extends Animal {
 
 public class Driver1 {
     public static void main(String[] args) {
-        Animal a = new Dog();
-        a.sound();
-        Dog d = (Dog) a;
-        d.fetch();
-        Animal a2 = new Animal();
-        System.out.println(a2 instanceof Dog);
+//        Animal a = new Dog();
+//        a.sound();
+//        Dog d = (Dog) a;
+//        d.fetch();
+//        Animal a2 = new Animal();
+//        System.out.println(a2 instanceof Dog);
+        
+        System.out.println("--------------------------------");
+        
+//        Animal a = new Animal();
+//        Dog d = (Dog) a;
+//        d.fetch();
+        
     }
 }
 
