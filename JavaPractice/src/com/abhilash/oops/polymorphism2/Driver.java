@@ -7,7 +7,7 @@ class Employee {
 }
 
 class HRManager extends Employee {
-	@Override
+	 @Override
 	public void markIn() {
 		System.out.println("HRmanager markingin.....");
 	}
@@ -19,5 +19,11 @@ public class Driver {
 		
 		Employee emp1 = new HRManager();
 		emp1.markIn();
+		
+//		HRManager hr = (HRManager) new Employee();
+//		hr.markIn();
+		
+		HRManager hr1 = (HRManager) emp1;
+		hr1.markIn();
 	}
 }
