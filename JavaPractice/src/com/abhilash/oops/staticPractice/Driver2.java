@@ -13,4 +13,12 @@ public class Driver2 {
 	public void deposite(long amount) {
 		balance += amount;
 	}
+	
+	public void withdraw(long amount) {
+		balance -= amount;
+	}
+	
+	public long getBalance() {
+		return balance;
+	}
 }
