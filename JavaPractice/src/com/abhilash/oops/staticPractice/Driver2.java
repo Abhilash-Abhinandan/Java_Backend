@@ -11,10 +11,15 @@ public class Driver2 {
 	}
 	
 	public void deposite(long amount) {
+		if(amount < 0)
+			throw new IllegalArgumentException("Can not be negative amount!");
+		
 		balance += amount;
 	}
 	
 	public void withdraw(long amount) {
+		if(amount > balance) 
+			throw new IllegalArgumentException("Withdraw amount should not exceed balance!");
 		balance -= amount;
 	}
 	
