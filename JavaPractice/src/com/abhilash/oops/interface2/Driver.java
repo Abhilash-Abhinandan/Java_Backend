@@ -4,6 +4,7 @@ public class Driver {
 	public static void main (String args[]) {
 		VechileDriver driver = new CarDriver();
 		driver.drivingExperince();
+		driver.driverId();
 	}
 }
 
@@ -12,11 +13,11 @@ interface VechileDriverEligble {
 	void drivingExperince();
 }
 
-abstract class VechileDriver {
+abstract class VechileDriver implements VechileDriverEligble {
 	abstract void driverId();
 }
 
-class CarDriver extends VechileDriver implements VechileDriverEligble {
+class CarDriver extends VechileDriver {
 	@Override
 	public void driverId() {
 		System.out.println("Deriver has the driver id!");
