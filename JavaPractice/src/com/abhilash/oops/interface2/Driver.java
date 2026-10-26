@@ -1,29 +1,34 @@
 package com.abhilash.oops.interface2;
 
 public class Driver {
-	
+	public static void main (String args[]) {
+		VechileDriver driver = new CarDriver();
+		driver.drivingExperince();
+	}
 }
 
-interface VechileDriver {
-	void driverId();
+interface VechileDriverEligble {
 	void driverLicense();
 	void drivingExperince();
 }
 
-class CarDriver implements VechileDriver {
+abstract class VechileDriver {
+	abstract void driverId();
+}
+
+class CarDriver extends VechileDriver implements VechileDriverEligble {
 	@Override
 	public void driverId() {
-		System.out.println("Driver id printing");
+		System.out.println("Deriver has the driver id!");
 	}
 	
 	@Override
 	public void driverLicense() {
-		System.out.println("Driver has the valid driver's license");
+		System.out.println("Driver has tha valid driver's license!");
 	}
 	
 	@Override
 	public void drivingExperince() {
-		System.out.println("Driver has 3 years of experince!");
+		System.out.println("Driver has 2 years of experinces! ");
 	}
-	
 }
