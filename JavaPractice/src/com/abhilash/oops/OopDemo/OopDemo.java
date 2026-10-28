@@ -1,7 +1,5 @@
 package com.abhilash.oops.OopDemo;
 
-//OopDemo.java
-
 //============ ABSTRACTION ============
 //Abstract class = a blueprint. You cannot do `new Shape()`
 abstract class Shape {
