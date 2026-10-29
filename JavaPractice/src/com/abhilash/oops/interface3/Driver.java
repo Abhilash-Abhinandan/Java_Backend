@@ -11,10 +11,11 @@ interface Car {
 	// We can define variables inside the interface!
 	double PI_VALUE = 3.14;
 	int value = 23;
-	// Here the publi static final is by default and we do not need to write explicitly!
+	// Here the public static final is by default and we do not need to write explicitly!
 	
 	
 	void start();
+	// In inteface we can just declare the methods, we are not allowed to define the body.
 	// Here the public abstract is by default we do not need to write public abstract explicitly!
 	// Interface can not be inherited so to access the start() method we have to declare the start() inside interface.
 	// Then we can define it in implemented classes so that when we create object of the implemented class we can use
