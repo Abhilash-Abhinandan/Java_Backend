@@ -16,6 +16,9 @@ interface Car {
 	
 	void start();
 	// Here the public abstract is by default we do not need to write public abstract explicitly!
+	// Interface can not be inherited so to access the start() method we have to declare the start() inside interface.
+	// Then we can define it in implemented classes so that when we create object of the implemented class we can use
+	// the start();
 }
 
 class Thar implements Car {
