@@ -6,6 +6,7 @@ public class Driver2 {
 		StreetDog streetDog = new StreetDog();
 		streetDog.bark();
 		streetDog.eat();
+		streetDog.sound();
 	}
 }
 
@@ -13,6 +14,12 @@ public class Driver2 {
 
 interface Animal {
 	void eat();
+	
+	// Generally interface do not allow us to define any mothod;
+	// But after Java 8 -> It allows us tu define a mothod using default methods
+	default void sound() {
+		System.out.println("Every animal has different sound");
+	}
 }
 
 interface Dog extends Animal {
@@ -27,6 +34,11 @@ class StreetDog implements Dog {
 	
 	@Override
 	public void bark() {
+		System.out.println("Dog is barking");
+	}
+	
+	@Override
+	public void sound() {
 		System.out.println("Dog is barking");
 	}
 }
