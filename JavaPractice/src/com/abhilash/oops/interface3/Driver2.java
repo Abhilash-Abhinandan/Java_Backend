@@ -11,7 +11,7 @@ public class Driver2 {
 }
 
 // Interface inheritance
-
+//
 interface Animal {
 	void eat();
 	
