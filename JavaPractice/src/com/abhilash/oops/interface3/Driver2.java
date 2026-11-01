@@ -42,3 +42,10 @@ class StreetDog implements Dog {
 		System.out.println("Dog is barking");
 	}
 }
+
+class PetDog implements Dog {
+	@Override
+	public void eat() {
+		System.out.println("")
+	}
+}
