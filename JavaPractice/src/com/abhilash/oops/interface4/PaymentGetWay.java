@@ -19,7 +19,7 @@ interface FullGateway extends PaymentGetWay, Refundable  {}
 class StripeGateway implements FullGateway, Auditable {
 	@Override
 	public String charge(String orderId, double amount) {
-		 return "txn-" + orderId;
+		 return "strip-txn-" + orderId;
 	}
 	
 	@Override public void refund(String txnId) {}
@@ -27,6 +27,12 @@ class StripeGateway implements FullGateway, Auditable {
 	@Override public void auditable(String auditTag) {}
 	
 	public String retry() {
-		return "Successfull";
+		return "Successful";
+	}
+}
+
+class RozarPayGetway extends StripeGateway {
+	@Override public String charge(String orderId, double amount) {
+		return "razorpay-txn-" + orderId;
 	}
 }

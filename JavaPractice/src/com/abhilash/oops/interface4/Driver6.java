@@ -8,5 +8,12 @@ public class Driver6 {
 		
 		String retryResult = strip.retry();
 		System.out.println(retryResult);
+		
+		RozarPayGetway rozarPay = new RozarPayGetway();
+		String rozarPayResult = rozarPay.charge("323223232", 12000);
+		System.out.println(rozarPayResult);
+		
+		String retryRozarPayResult = rozarPay.retry();
+		System.out.println(retryRozarPayResult);
 	}
 }
