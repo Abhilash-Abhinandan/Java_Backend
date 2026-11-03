@@ -24,7 +24,9 @@ class StripeGateway implements FullGateway, Auditable {
 	
 	@Override public void refund(String txnId) {}
 	
-	@Override public void auditable(String auditTag) {
-		
+	@Override public void auditable(String auditTag) {}
+	
+	public String retry() {
+		return "Successfull";
 	}
 }
