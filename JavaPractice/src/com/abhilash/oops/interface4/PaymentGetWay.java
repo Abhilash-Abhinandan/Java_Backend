@@ -36,3 +36,7 @@ class RozarPayGetway extends StripeGateway {
 		return "razorpay-txn-" + orderId;
 	}
 }
+
+// This is the high level inheritance and we should use the interface and 
+//  we know ther is any thing possible here and there!
+class  PhonePay extends 
