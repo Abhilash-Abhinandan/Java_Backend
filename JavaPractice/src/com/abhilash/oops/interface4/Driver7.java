@@ -5,3 +5,8 @@ public class Driver7 {
 		System.out.println();
 	}
 }
+
+
+interface Payble {
+	
+}
