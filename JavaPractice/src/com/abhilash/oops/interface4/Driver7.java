@@ -5,3 +5,7 @@ public class Driver7 {
 		System.out.println();
 	}
 }
+
+interface Payable {
+	double MAX_PAYMENT = 0;
+}
