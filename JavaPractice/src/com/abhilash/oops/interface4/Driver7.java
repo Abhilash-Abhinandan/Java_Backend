@@ -8,4 +8,4 @@ public class Driver7 {
 
 interface Payable {
 	double MAX_PAYMENT = 0;
-}
+} 
