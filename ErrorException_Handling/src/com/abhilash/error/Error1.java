@@ -7,7 +7,8 @@ public class Error1 {
 		
 		try {
 			System.out.println(a / b);
-		} catch (ArithmeticException err) {
+		}
+		catch (ArithmeticException err) {
 			System.out.println(err.getMessage());
 		}
 	}
