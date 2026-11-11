@@ -27,7 +27,7 @@ public class Error1 {
 //		}
 		// Instead of "Exception" we can write "Throwable" because it is the parent class of "Exception" .
 		// But this is not recommended because "Throwable" is not only the parent call of "Exception" but also parent
-		//  class of "Error" so
+		//  class of "Error" so writting "Throwable" can also catch Error also which can be dangerious .
 		
 		catch(Throwable err) { // Not recommended
 			System.out.println(err.getMessage());
