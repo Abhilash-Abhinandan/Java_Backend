@@ -8,7 +8,26 @@ public class Error1 {
 		try {
 			System.out.println(a / b);
 		}
-		catch (ArithmeticException err) {
+//		catch (ArithmeticException err) {
+//			System.out.println(err.getMessage());
+//		}
+		// Above in catch() we right ArithmethicException which is exact excption we could get
+		// We can also write RuntimeException instead of ArithmethicException because RutimeException is parent class
+		// of ArithmeticException
+//		catch (RuntimeException err) {
+//			System.out.println(err.getMessage());
+//		}
+		// Again we can write "Exception" instead of "RuntimeException" because "Exception" is the parent class of
+		// "RuntimeException"
+		
+//		catch(Exception err) {  // We use this most of the time
+//			System.out.println(err.getMessage());
+//		}
+		// Instead of "Exception" we can write "Throwable" because it is the parent class of "Exception" .
+		// But this is not recommended because "Throwable" is not only the parent call of "Exception" but also parent
+		//  class of "Error" so
+		
+		catch(Throwable err) { // Not recommended
 			System.out.println(err.getMessage());
 		}
 	}
