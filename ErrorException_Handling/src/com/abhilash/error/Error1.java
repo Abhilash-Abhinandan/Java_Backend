@@ -6,11 +6,13 @@ public class Error1 {
 		int b = 0;
 		
 		try {
-			System.out.println(a / b);
+			System.out.println(a / b); // new ArithmeticException(" / by zero "); 
 		}
+		
 //		catch (ArithmeticException err) {
 //			System.out.println(err.getMessage());
 //		}
+		// We know that parent class reference variable can point the child class object.
 		// Above in catch() we right ArithmethicException which is exact excption we could get
 		// We can also write RuntimeException instead of ArithmethicException because RutimeException is parent class
 		// of ArithmeticException
