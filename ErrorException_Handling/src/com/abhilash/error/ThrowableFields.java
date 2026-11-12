@@ -7,7 +7,7 @@ public class ThrowableFields {
 		} catch(NumberFormatException err) {
 			System.out.println("Message : " + err.getMessage());
 			System.out.println("Class : " + err.getClass().getName());
-			System.out.println("Cause : " + err.getCause());
+			System.out.println("Cause : " + err.getCause()); 
 			System.out.println("Frames: " + err.getStackTrace().length);
 		}
 	}
