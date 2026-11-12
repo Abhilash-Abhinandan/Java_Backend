@@ -4,6 +4,7 @@ public class CheckoutFlow {
     public static void main(String[] args) {
         System.out.println("Starting checkout.");
         
+        // The exception propagates to main() and handled here 
         try {
         	placeOrder("ORD-1001", "1234abcd");
         	System.out.println("Checkout Finished!");
