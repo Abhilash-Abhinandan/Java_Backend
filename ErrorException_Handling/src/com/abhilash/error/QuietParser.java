@@ -1,5 +1,6 @@
 package com.abhilash.error;
 
+// A Common Mistake: Swallowing the Stack Trace
 public class QuietParser {
     public static void main(String[] args) {
         String userInput = "twenty";
