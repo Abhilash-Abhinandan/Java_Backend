@@ -1,6 +1,6 @@
 package com.abhilash.error;
 
-public class AveragePrice {
+public class AvaragePrice {
     public static void main(String[] args) {
         double cartTotal = 89.97;
         int itemCount = 0;
