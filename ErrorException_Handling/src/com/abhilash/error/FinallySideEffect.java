@@ -31,7 +31,7 @@ public class FinallySideEffect {
 		}
 	}
 	// Here output will be 999 bcz Java evaluates the return expression and captures the reference to that array.
-	// 
+	// So it able to modify the original array but it can not assing completely new array;
 }
 
 /*
