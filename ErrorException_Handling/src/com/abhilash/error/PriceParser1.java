@@ -12,6 +12,7 @@ public class PriceParser1 {
 			price = 9.99;
 		} finally {
 			System.out.println("Final price decided: " + price);
+			// We also can use finally like this not only for cleanup 
 		}
 		
 		return price;
