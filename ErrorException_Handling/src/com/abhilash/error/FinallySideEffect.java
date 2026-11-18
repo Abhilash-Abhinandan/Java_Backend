@@ -16,6 +16,8 @@ public class FinallySideEffect {
 		} finally {
 			value = 999;
 		}
+		
+		return value;
 	}
 	// Here the output will be 1 because before the finally block runs try block runs and inside the try block the value 
 	// is captured and return before going to finally
