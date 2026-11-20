@@ -38,4 +38,35 @@ class OrderInfo {
 	}
 }
 
+class PaymentDecliendException extends Exception {
+	public PaymentDecliendException(String reason) {
+		super("Payment decliend : " + reason);
+	}
+}
+
+class InventoryShortageException extends Exception {
+	public InventoryShortageException(String sku) {
+		super("Inventory shortage for SKU" + sku);
+	}
+}
+
+class paymentService {
+	public void service (long customerId, double amount) throws PaymentDecliendException {
+		if(amount > 10_000) {
+			throw new PaymentDecliendException("amount exceeds limit");
+		}
+		
+		System.out.println("Charged $" + amount + " to customer " + customerId);
+	}
+}
+
+class WarehouseService {
+	public void reserve (String productCode , int quantity) throws InventoryShortageException {
+		if (quantity > 5) {
+			throw new InventoryShortageException(productCode);
+		}
+		
+		System.out.println("Reserved " + quantity + " of " + productCode);
+	}
+}
 
