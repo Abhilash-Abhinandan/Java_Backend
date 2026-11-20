@@ -1,13 +1,17 @@
 package com.abhilash.error;
 
-public class FindOrderDemo {
-	public static void main(String args[]) throws OrderNotFoundException {
-		OrderRepository repo = new OrderRepository();
-		OrderInfo order = repo.findById(1001);
-		// In above line the compiler will complaint for not being handled because the line might throw checked excepiton
-		// But in main class we throws it again so it does not complaint.
-		System.out.println("Found order: " + order.id + " status = " + order.status);
-	}
+class OrderProcessor {
+    private OrderRepository repo = new OrderRepository();
+    private PaymentService payments = new PaymentService();
+    private WarehouseService warehouse = new WarehouseService();
+
+    public void shipOrder(long orderId, String productCode, int quantity, double amount)
+            throws OrderNotFoundException, PaymentDeclinedException, InventoryShortageException {
+        OrderInfo order = repo.findById(orderId);
+        warehouse.reserve(productCode, quantity);
+        payments.charge(orderId, amount);
+        System.out.println("Order " + order.id + " shipped");
+    }
 }
 
 class OrderNotFoundException extends Exception {
@@ -38,8 +42,8 @@ class OrderInfo {
 	}
 }
 
-class PaymentDecliendException extends Exception {
-	public PaymentDecliendException(String reason) {
+class PaymentDeclinedException extends Exception {
+	public PaymentDeclinedException(String reason) {
 		super("Payment decliend : " + reason);
 	}
 }
@@ -50,10 +54,10 @@ class InventoryShortageException extends Exception {
 	}
 }
 
-class paymentService {
-	public void service (long customerId, double amount) throws PaymentDecliendException {
+class PaymentService {
+	public void charge(long customerId, double amount) throws PaymentDeclinedException {
 		if(amount > 10_000) {
-			throw new PaymentDecliendException("amount exceeds limit");
+			throw new PaymentDeclinedException("amount exceeds limit");
 		}
 		
 		System.out.println("Charged $" + amount + " to customer " + customerId);
@@ -70,3 +74,13 @@ class WarehouseService {
 	}
 }
 
+public class FindOrderDemo {
+	private OrderRepository repo = new OrderRepository();
+	
+	public static void main(String args[]) 
+			throws OrderNotFoundException,PaymentDeclinedException, InventoryShortageException {
+		
+		OrderProcessor processor = new OrderProcessor();
+		processor.shipOrder(001, "BOOK-42", 2, 49.99);
+	}
+}
