@@ -33,5 +33,10 @@ public class LookupDemo {
 		OrderLookup lookup = new DatabaseOrderLookup();
 		OrderInfo order = lookup.findById(1001);
 		System.out.println("Found order " + order.id);
+		
+		
+		OrderLookup fake = new FakeOrderLookup();
+	    OrderInfo fakeOrder = fake.findById(2002);
+	    System.out.println("Fake order " + fakeOrder.id);
 	}
 }
