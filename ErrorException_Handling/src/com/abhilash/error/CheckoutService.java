@@ -14,12 +14,12 @@ public class CheckoutService {
 //			System.out.println(e.getMessage());
 //			e.printStackTrace();
 			System.out.println("Checkout failed for cart with " + cart.size() + " item(s)");
-			throw e;
+//			throw e;
 			// in this case tack trace still point to validateCart();
 			// Because here we just catch the exception and throw it again 
 			// we are not creating a new Exception here
 			
-//			throw new IllegalArgumentException(e.getMessage());
+			throw new IllegalArgumentException(e.getMessage());
 			// Here the stack trace will point to checkout() because When Java creates an exception object, it captures the stack trace at the location where the exception is created.
 		}
 	}
