@@ -19,11 +19,7 @@ class DatabaseOrderLookup implements OrderLookup {
 class FakeOrderLookup implements OrderLookup {
 	
 	@Override
-	public OrderInfo findById(long orderId) throws OrderNotFoundException {
-		if(orderId < 0) {
-			throw new OrderNotFoundException(orderId);
-		}
-		
+	public OrderInfo findById(long orderId) {
 		return new OrderInfo(orderId, "Placed");
 	}
 }
