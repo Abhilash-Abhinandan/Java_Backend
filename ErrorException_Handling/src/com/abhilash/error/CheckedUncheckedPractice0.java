@@ -3,7 +3,7 @@ package com.abhilash.error;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class CheckedUnchecked {
+public class CheckedUncheckedPractice0 {
     public static void main(String[] args) {
         print(IOException.class);
         print(NullPointerException.class);
