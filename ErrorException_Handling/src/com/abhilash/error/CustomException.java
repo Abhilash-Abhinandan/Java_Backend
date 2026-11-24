@@ -1,8 +1,20 @@
 package com.abhilash.error;
 
 class OrderNotFoundException0 extends RuntimeException {
+	public OrderNotFoundException0() {
+		super();
+	}
+	
 	public OrderNotFoundException0(String message) {
 		super(message);
+	}
+	
+	public OrderNotFoundException0(String message, Throwable cause) {
+		super(message, cause);
+	}
+	
+	public OrderNotFoundException0(Throwable cause) {
+		super(cause);
 	}
 }
 
