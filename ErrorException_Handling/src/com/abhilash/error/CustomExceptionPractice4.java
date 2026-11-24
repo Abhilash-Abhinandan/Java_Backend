@@ -14,7 +14,7 @@ public class CustomExceptionPractice4 {
     }
 
     static void validateAddress(String country, String postalCode) throws InvalidShippingAddressException {
-    	if(country == "US" && postalCode.length() != 5) {
+    	if(country.equals("US") && postalCode.length() != 5) {
     		throw new InvalidShippingAddressException("Invalid postal code 12A for US", country, postalCode);
     	}
     }
