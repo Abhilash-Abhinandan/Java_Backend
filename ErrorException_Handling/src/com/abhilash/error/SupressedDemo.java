@@ -32,5 +32,13 @@ public class SupressedDemo {
                 System.out.println("suppressed: " + suppressed.getMessage());
             }
         }
+ 
+    	// We can do bellow in java 9 and onwords this is more efficient
+//    	FailingLog log = new FailingLog("order-log");
+//    	log.write("checkout started");
+//    	
+//    	try (log) {
+//    		throw new RuntimeException("body failed");
+//    	}
     }
 }
