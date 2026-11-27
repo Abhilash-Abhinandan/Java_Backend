@@ -63,6 +63,23 @@ public class ChainDemo {
 //        service.processOrder("ORD-9001");
     	
     	// We can write like this in a single line
-    	new OrderService().processOrder("ORD-9001");
+    	
+    	try {
+    		new OrderService().processOrder("ORD-9001");
+    	} catch(OrderProcessingException e) {
+    		System.out.println("Can not process order");
+    		
+    		Throwable current = e;
+    		while(current.getCause() != null && 
+    				current.getCause() != current) {
+    			current = current.getCause();
+    		}
+    		
+    		System.out.println("Root cause type: "
+                    + current.getClass().getSimpleName());
+
+            System.out.println("Root cause message: "
+                    + current.getMessage());
+    	}
     }
 }
