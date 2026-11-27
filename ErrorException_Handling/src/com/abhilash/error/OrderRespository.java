@@ -7,7 +7,7 @@ public class OrderRespository {
 	}
 }
 
-class CachedOrderRepository extends OrderRepository {
+class CachedOrderRepository extends OrderRepository0 {
 	@Override
 	public OrderInfo findById(long orderId) throws OrderNotFoundException {
 		System.out.println("Cache lookup for " + orderId);
